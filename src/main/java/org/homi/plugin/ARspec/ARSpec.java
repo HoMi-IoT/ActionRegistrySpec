@@ -3,31 +3,28 @@ import org.homi.plugin.specification.*;
 
 @SpecificationID(id = "ActionRegistry") 
 public enum ARSpec implements ISpecification{
-	CALL(Object.class, String.class, String.class, Object[].class),
-	GETPLUGINS(String[].class),
-	GETSPEC(String[].class, String.class);
+	CALL(new ParameterType<>(Object.class), new ParameterType<>(String.class), new ParameterType<>(String.class), new ParameterType<>(Object[].class)),
+	EXECUTE(new ParameterType<>(Object.class), new ParameterType<>(IAction.class, true)),
+	GETPLUGINS(new ParameterType<>(String[].class)),
+	GETSPEC(new ParameterType<>(String[].class), new ParameterType<>(String.class));
 	
-	
-	
-	Class<?> returnType;
-	Class<?>[] parameters; 
-	
-	
+	ParameterType<?> returnType;
+	ParameterType<?>[] parameters;
  
-	ARSpec(Class<?> returnType, Class<?> ...params ) {
+	ARSpec(ParameterType<?> returnType, ParameterType<?> ...params ) {
 		this.returnType = returnType;
 		this.parameters = params;
 		
 	}
 
 	@Override
-	public Class<?>[] getParameterTypes() {
+	public ParameterType<?>[] getParameterTypes() {
 		
 		return this.parameters;
 	}
 
 	@Override
-	public Class<?> getReturnType() {
+	public ParameterType<?> getReturnType() {
 	
 		return this.returnType;
 	}
