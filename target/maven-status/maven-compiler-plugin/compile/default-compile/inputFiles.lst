@@ -1,4 +1,9 @@
 /home/omri/eclipse-workspace/ARSpec/src/main/java/org/homi/plugin/ARspec/IAction.java
+/home/omri/eclipse-workspace/ARSpec/src/main/java/org/homi/plugin/ARspec/CustomAction.java
+/home/omri/eclipse-workspace/ARSpec/src/main/java/org/homi/plugin/ARspec/IActionVisitor.java
 /home/omri/eclipse-workspace/ARSpec/src/main/java/module-info.java
 /home/omri/eclipse-workspace/ARSpec/src/main/java/org/homi/plugin/ARspec/SpecAction.java
+/home/omri/eclipse-workspace/ARSpec/src/main/java/org/homi/plugin/ARspec/ScriptAction.java
 /home/omri/eclipse-workspace/ARSpec/src/main/java/org/homi/plugin/ARspec/ARSpec.java
+/home/omri/eclipse-workspace/ARSpec/src/main/java/org/homi/plugin/ARspec/IBuilderVisitor.java
+/home/omri/eclipse-workspace/ARSpec/src/main/java/org/homi/plugin/ARspec/ActionParameter.java

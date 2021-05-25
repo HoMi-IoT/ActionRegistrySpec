@@ -12,10 +12,11 @@ public class SpecAction implements IAction{
 	
 	private String specTarget;
 	private String apiCall;
-	private List<Object> parameters;
+	private List<ActionParameter<?>> parameters;
 	
-	public SpecAction(String s, String call, Object... params) {
+	public SpecAction(String s, String call, ActionParameter<?>... params) {
 		this.specTarget = s;
+		
 		this.parameters = List.of(params);
 		this.apiCall = call;
 	}
@@ -24,12 +25,19 @@ public class SpecAction implements IAction{
 		return this.specTarget;
 	}
 	
-	public List<Object> getParams() {
+	public List<ActionParameter<?>> getParams() {
 		return this.parameters;
+		
 	}
 	
 	public String getAPICall() {
 		return this.apiCall;
+	}
+
+	@Override
+	public void accept(IActionVisitor ab) {
+		ab.visit(this);
+		
 	}
 	
 	

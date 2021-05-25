@@ -5,8 +5,6 @@ import java.util.ArrayList;
 
 public interface IAction extends Serializable{
 
-	public default Class<?> getKind() {
-		return this.getClass();
-	}	
+	public void accept(IActionVisitor ab);
 	
 }

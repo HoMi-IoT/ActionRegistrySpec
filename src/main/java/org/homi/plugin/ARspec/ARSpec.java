@@ -4,7 +4,9 @@ import org.homi.plugin.specification.*;
 @SpecificationID(id = "ActionRegistry") 
 public enum ARSpec implements ISpecification{
 	CALL(new ParameterType<>(Object.class), new ParameterType<>(String.class), new ParameterType<>(String.class), new ParameterType<>(Object[].class)),
-	EXECUTE(new ParameterType<>(Object.class), new ParameterType<>(IAction.class, true)),
+	//EXECUTE(new ParameterType<>(Object.class), new ParameterType<>(IAction.class, true)),
+	
+	DEFINE(new ParameterType<>(Void.class), new ParameterType<>(IAction.class, true)),
 	GETPLUGINS(new ParameterType<>(String[].class)),
 	GETSPEC(new ParameterType<>(String[].class), new ParameterType<>(String.class));
 	
