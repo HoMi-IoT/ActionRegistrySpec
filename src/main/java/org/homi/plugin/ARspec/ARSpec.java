@@ -1,34 +1,42 @@
 package org.homi.plugin.ARspec;
-import org.homi.plugin.specification.*;
+
+import org.homi.plugin.specification.ISpecification;
+import org.homi.plugin.specification.SpecificationID;
+import org.homi.plugin.specification.SerializableTypeDef;
+import org.homi.plugin.specification.SpecificationHelper;
+import org.homi.plugin.specification.TypeDef;
 
 @SpecificationID(id = "ActionRegistry") 
 public enum ARSpec implements ISpecification{
-	CALL(new ParameterType<>(Object.class), new ParameterType<>(String.class), new ParameterType<>(String.class), new ParameterType<>(Object[].class)),
+	CALL(Object.class, String.class, String.class, Object[].class),
 	//EXECUTE(new ParameterType<>(Object.class), new ParameterType<>(IAction.class, true)),
 	
-	DEFINE(new ParameterType<>(Void.class), new ParameterType<>(IAction.class, true)),
-	GETPLUGINS(new ParameterType<>(String[].class)),
-	GETSPEC(new ParameterType<>(String[].class), new ParameterType<>(String.class));
+	DEFINE(Void.class, new SerializableTypeDef<>(IAction.class)),
+	GETPLUGINS(String[].class),
+	GETSPEC(String[].class, String.class);
 	
-	ParameterType<?> returnType;
-	ParameterType<?>[] parameters;
- 
-	ARSpec(ParameterType<?> returnType, ParameterType<?> ...params ) {
-		this.returnType = returnType;
-		this.parameters = params;
-		
+	private TypeDef<?>[] parameterTypes;
+	private TypeDef<?> returnType;
+	ARSpec(Object returnType, Object...parameterTypes ) {
+		try {
+			this.returnType = SpecificationHelper.processType(returnType);
+			this.parameterTypes = new TypeDef<?>[parameterTypes.length];
+			
+			for(int i =0; i<parameterTypes.length; i++) {
+				this.parameterTypes[i] = SpecificationHelper.processType(parameterTypes[i]);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
-	public ParameterType<?>[] getParameterTypes() {
-		
-		return this.parameters;
+	public TypeDef<?>[] getParameterTypes() {
+		return this.parameterTypes;
 	}
-
-	@Override
-	public ParameterType<?> getReturnType() {
 	
+	@Override
+	public TypeDef<?> getReturnType() {
 		return this.returnType;
 	}
-
 }
