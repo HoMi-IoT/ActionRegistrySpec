@@ -1,12 +1,13 @@
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/arguments/VariableArgument.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/arguments/IActionArgumentVisitor.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/arguments/ValueArgument.java
-/home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/CustomActionDefenition.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/IActionDefenition.java
-/home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/IAction.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/arguments/IActionArgument.java
+/home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/ARSpec.java
+/home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/AbstractAction.java
+/home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/CustomActionDefenition.java
+/home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/IAction.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/IActionDefenitionVisitor.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/ScriptActionDefinition.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/module-info.java
-/home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/ARSpec.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/plugin/SpecificationActionDefinition.java

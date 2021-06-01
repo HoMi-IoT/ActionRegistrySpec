@@ -15,6 +15,7 @@ import static org.homi.plugin.specification.Constraints.*;
 @SpecificationID(id = "ActionRegistry") 
 public enum ARSpec implements ISpecification{
 	CALL(Object.class, String.class, String.class, Object[].class),
+	TEST(Boolean.class),
 //	RUN(new ParameterType<>(Object.class), new ParameterType<>(IAction.class, true)),
 	GET_ACTION(defineSerializableType(IAction.class), String.class),
 	DEFINE(Void.class, defineSerializableType(IActionDefenition.class, notNull()));
