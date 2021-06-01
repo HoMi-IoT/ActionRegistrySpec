@@ -36,7 +36,7 @@ public class SpecificationActionDefinition implements IActionDefenition{
 	}
 
 	
-	public String getCommand(String s) {
+	public String getCommand() {
 		return this.command;
 	}
 	
