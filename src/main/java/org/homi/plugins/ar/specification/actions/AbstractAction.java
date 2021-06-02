@@ -8,13 +8,10 @@ import java.util.function.Function;
 
 public abstract class AbstractAction implements IAction {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7133010062896916619L;
 
-	private Function<Object, Map<String, Object>> invocationUnit;
-	private Map<String, Object> arguments;
+	private Function< Map<String, Serializable>, Serializable> invocationUnit;
+	private Map<String, Serializable> arguments;
 	private List<String> parameters;
 	
 	public AbstractAction(List<String> parameters) {
@@ -25,11 +22,11 @@ public abstract class AbstractAction implements IAction {
 		}
 	}
 	
-	protected <T extends Function<Object, Map<String, Object>> & Serializable> void setInvocationUnit(T iu) {
-		this.invocationUnit = iu;
+	protected <T extends Function<Map<String, Serializable>, Serializable> & Serializable> void setInvocationUnit(T iu) {
+		this.invocationUnit = (Function<Map<String, Serializable>, Serializable> & Serializable) iu;
 	}
 	
-	protected Map<String, Object> getArguments(){
+	protected Map<String, ? extends Serializable> getArguments(){
 		return this.arguments;
 	}
 
@@ -38,22 +35,25 @@ public abstract class AbstractAction implements IAction {
 	}
 	
 	@Override
-	public void SetArgument(String parameter, Object argument) {
+	public <T extends Serializable> void SetArgument(String parameter, T argument) {
+		System.out.println("setting argument "+parameter+" to value "+ argument);
 		arguments.put(parameter, argument);
 	}
 
 	@Override
-	public void SetArguments(Map<String, ?> args) {
+	public void SetArguments(Map<String, ? extends Serializable> args) {
 		arguments.putAll(args);
 	}
 
 	@Override
 	public final <R> R run() {
+		System.out.println("running");
 		return (R) this.invocationUnit.apply(arguments);
 	};
 
 	@Override
-	public final <R> R run(Object... args) {
+	public final <R, S extends Serializable> R run(S... args) {
+		System.out.println("running with args");
 		for(int i=0; i< this.parameters.size(); i++) {
 			this.arguments.put(this.parameters.get(i), args[i]);
 		}

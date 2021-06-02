@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Map;
 
 public interface IAction extends Serializable {
-	public void SetArgument(String parameter, Object argument);
-	public void SetArguments(Map<String, ?> args);
+	public <T extends Serializable> void SetArgument(String parameter, T argument);
+	public void SetArguments(Map<String, ? extends Serializable> args);
 	public <R> R run();
-	public <R> R run(Object...args);
+	public <R, S extends Serializable> R run(S... args);
 }

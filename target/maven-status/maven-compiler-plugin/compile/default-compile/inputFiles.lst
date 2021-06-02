@@ -3,8 +3,10 @@
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/arguments/ValueArgument.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/IActionDefenition.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/arguments/IActionArgument.java
+/home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/SpecificationAction.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/ARSpec.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/AbstractAction.java
+/home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/temp/Custom.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/CustomActionDefenition.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/IAction.java
 /home/nicolas/git/ActionRegistrySpec/src/main/java/org/homi/plugins/ar/specification/actions/IActionDefenitionVisitor.java
