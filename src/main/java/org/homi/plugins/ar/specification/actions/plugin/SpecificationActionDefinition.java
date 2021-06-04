@@ -16,12 +16,6 @@ public class SpecificationActionDefinition<T extends Enum<T> & ISpecification> i
 	private T command;
 	private List<IActionArgument<?>> parameters;
 	
-	public SpecificationActionDefinition(IPlugin plugin, T command, IActionArgument<?>... parameters) {
-		this.plugin = plugin;
-		this.command = command;
-		this.parameters = List.of(parameters);
-	}
-	
 	public SpecificationActionDefinition(IPlugin plugin, T command, List<IActionArgument<?>> parameters) {
 		this.plugin = plugin;
 		this.command = command;
