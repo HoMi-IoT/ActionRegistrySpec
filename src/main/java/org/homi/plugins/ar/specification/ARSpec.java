@@ -18,7 +18,8 @@ public enum ARSpec implements ISpecification{
             
 //	RUN(new ParameterType<>(Object.class), new ParameterType<>(IAction.class, true)),
 	GET_ACTION(BiFunction.class, defineSerializableType(ActionQuery.class, notNull())),
-	DEFINE(Void.class, defineSerializableType(IActionDefenition.class, notNull()));
+	DEFINE(Void.class, defineSerializableType(IActionDefenition.class, notNull())),
+	TEST(Boolean.class, String.class);
 //	GETPLUGINS(String[].class),
 //	GET_SPEC(String[].class, String.class);
 	

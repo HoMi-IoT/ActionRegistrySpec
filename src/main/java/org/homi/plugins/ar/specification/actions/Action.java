@@ -43,7 +43,7 @@ public class Action<R> {
 	}
 
 	private static void getActionRegistry() {
-		actionRegistry = (IBasicPlugin) pluginProvider.getPluginByID("");
+		actionRegistry = (IBasicPlugin) pluginProvider.getPluginByID("ActionRegistry");
 	}
 	
 	public void set(String Key, Object Value) {
