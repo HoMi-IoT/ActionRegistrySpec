@@ -13,7 +13,7 @@ import org.homi.plugins.ar.specification.actions.ActionQuery;
 import static org.homi.plugin.specification.SpecificationHelper.*;
 import static org.homi.plugin.specification.Constraints.*;
 
-@SpecificationID(id = "ActionRegistry") 
+@SpecificationID(id = "ARSpec") 
 public enum ARSpec implements ISpecification{
             
 //	RUN(new ParameterType<>(Object.class), new ParameterType<>(IAction.class, true)),

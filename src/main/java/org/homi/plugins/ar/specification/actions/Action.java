@@ -29,6 +29,9 @@ public class Action<R> {
 	public static <R> Action<R> getAction(ActionQuery aq) throws PluginException, InvalidArgumentException, ArgumentLengthException {
 		if(commander == null)
 			getARSpecCommander();
+		System.out.println("_____________getting action_________________: "+aq.getPluginID() + " "+aq.getSpecificationID() + " "+aq.getCommand() );
+		System.out.println("got : " + commander.execute(ARSpec.GET_ACTION, aq) );
+		System.out.println("_____________done getting action_________________: "+aq.getPluginID() + " "+aq.getSpecificationID() + " "+aq.getCommand() );
 		return new Action<R>(commander.execute(ARSpec.GET_ACTION, aq));
 	}
 
@@ -52,6 +55,17 @@ public class Action<R> {
 	
 	public R run() throws PluginException, InvalidArgumentException, ArgumentLengthException {
 		return action.apply(this.arguments, Action.class.getClassLoader());
+	}
+
+	public R run(Object...args) throws PluginException, InvalidArgumentException, ArgumentLengthException {
+		for(int i=0; i<args.length; i++) {
+			this.arguments.put(Integer.toString(i), args[i]);
+		}
+		return action.apply(this.arguments, Action.class.getClassLoader());
+	}
+	
+	public R run(Map<String, Object> arguments) throws PluginException, InvalidArgumentException, ArgumentLengthException {
+		return action.apply(arguments, Action.class.getClassLoader());
 	}
 
 }
