@@ -46,8 +46,9 @@ public class ActionQuery implements Serializable {
 		return this;
 	}
 	
-	public void tags(Collection<String> tags) {
+	public ActionQuery tags(Collection<String> tags) {
 		this.tags.addAll(tags);
+		return this;
 	}
 
 	public ActionQuery.TYPE getType() {
